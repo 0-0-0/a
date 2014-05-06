@@ -1,0 +1,83 @@
+
+	<!DOCTYPE html>
+	<html>
+
+	<head>
+	<meta charset='UTF-8'>
+
+	
+	<link rel='stylesheet' href='2experiment.css'>
+	
+	<style>
+	div {
+  background: #70bf32;
+  background: url('linear-gradient.png') 0 0 repeat-x;
+  background: -webkit-linear-gradient(#a1e048, #6a942f);
+  background:    -moz-linear-gradient(#a1e048, #6a942f);
+  background:     -ms-linear-gradient(#a1e048, #6a942f);
+  background:      -o-linear-gradient(#a1e048, #6a942f);
+  background:         linear-gradient(#a1e048, #6a942f);
+}
+#animate img {
+     background: red;  
+     -webkit-animation: super-rainbow 15s infinite alternate linear; 
+     -moz-animation: super-rainbow 15s infinite alternate linear; 
+}
+
+@-webkit-keyframes super-rainbow {
+    0%   { background: red; } 
+    20%  { background: orange; }
+    40%  { background: yellow; }
+    60%  { background: green; }
+    80%  { background: blue; }
+    100% { background: violet; }
+}
+
+@-moz-keyframes super-rainbow {
+    0%   { background: red; } 
+    20%  { background: orange; }
+    40%  { background: yellow; }
+    60%  { background: green; }
+    80%  { background: blue; }
+    100% { background: violet; }
+}
+
+#animate img:nth-of-type(2) { -webkit-animation-delay: 1s; -moz-animation-delay: 1s; }
+#animate img:nth-of-type(3) { -webkit-animation-delay: 2s; -moz-animation-delay: 2s; }
+#animate img:nth-of-type(4) { -webkit-animation-delay: 3s; -moz-animation-delay: 3s;  }
+
+#transition img {
+     background-position: 0 0;
+     background-size: 200% 100%;
+     background-color: red;
+     background-image: -webkit-linear-gradient(left, red, orange, yellow, green, blue, violet);
+     background-image:    -moz-linear-gradient(left, red, orange, yellow, green, blue, violet); 
+     background-image:     -ms-linear-gradient(left, red, orange, yellow, green, blue, violet);
+     background-image:      -o-linear-gradient(left, red, orange, yellow, green, blue, violet);
+     background-image:         linear-gradient(left, red, orange, yellow, green, blue, violet);
+     
+ -moz-transition: all 0.3s ease-out;  /* FF4+ */
+   -o-transition: all 0.3s ease-out;  /* Opera 10.5+ */
+-webkit-transition: all 0.3s ease-out;  /* Saf3.2+, Chrome */
+  -ms-transition: all 0.3s ease-out;  /* IE10? */
+      transition: all 0.3s ease-out;  
+}
+
+#transition img:hover {
+     background-position: -100% 100%;    
+}
+  </style>
+</head>
+<body>
+	<div id="page-wrap">
+	 <section id="animate">
+	   <img src="" alt="yo">
+	   <img src="" alt="yo">
+	   <img src="" alt="yo">
+	   <img src="" alt="yo">
+	 </section>
+	
+	 	
+	</div>
+	
+</body>

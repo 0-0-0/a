@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<title>Parent Sign In</title>
+<meta http-equiv="X-UA-Compatible" content="IE=8"/>
+<meta name="robots" content="noindex" />
+<link href="/images/css/screen.css" rel="stylesheet" type="text/css" media="screen" />
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<meta name="viewport" content="width=device-width" />
+<script src="/scripts/jquery-1.4.2.min.js"></script> 
+<script language="JavaScript" src="/admin/javascript/md5.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/javascript"><!--
+var pskey = "0DF409341C3B228C77A00A8C6AD103B06ED052744A7310CE092F402773BD7FDC";
+//-->
+</script>
+<script language="JavaScript" type="text/javascript">
+function deleteCookie(cookieName){
+	var cookieDate = new Date();
+	cookieDate.setTime(cookieDate.getTime()-1);
+	document.cookie = cookieName + "=; expires='" + cookieDate.toGMTString()+"'; path=/";
+}
+deleteCookie("InformAuthToken");
+
+function getURLParameter(name) {
+    return unescape(
+        (RegExp(name + '=' + '(.+?)(&|$)').exec(location.search)||[,null])[1]
+    );
+}
+
+var $j = jQuery.noConflict();
+$j(document).ready(function() {
+    // Hide or show the translator login input field
+    // if the URL parameter "translator" is present
+	var translator = getURLParameter("translator");
+	if (translator == "null") {
+		$j('#translatorInput').hide();
+	} else {
+	    if (translator == "true") {
+			$j('#translatorInput').show();
+		} else {
+			$j('#translatorInput').hide();
+		}
+	}
+	$j('a.popWin').click(function(){
+		var winURL = $j(this).attr('href');
+		window.open(winURL);
+		return false;
+	});
+});
+</script>
+</head>
+<body class="pslogin" id="palogin">
+<div id="container">
+     <div id="branding-powerschool"><img src="/images/img/ps7-logo-lrg.png" alt="PowerSchool"  width="280" height="41" /></div>
+
+<!--remove comment tag to enable alert
+    <div class="feedback-alert">
+	<p><strong>Powerschool will be unavailable from 6:00PM Dec. 31, 2013 until 12:00 Noon Jan. 1, 2014.</strong></p>
+    </div>
+//-->
+
+  <div id="content" class="group">
+<form action="/guardian/home.html" method="post" name="LoginForm" target="_top" id="LoginForm" onsubmit="doPCASLogin(this);">
+  <input type="hidden" name="pstoken" value="1764635305njlf2hqEc9iGFdGMr66RLNww5G4fAN9j" />
+  <input type="hidden" name="contextData" value="0DF409341C3B228C77A00A8C6AD103B06ED052744A7310CE092F402773BD7FDC" />
+  <input type="hidden" name="dbpw" value="" />
+  <input type="hidden" name="translator_username" value="" />
+  <input type="hidden" name="translator_password" value="" />
+  <input type="hidden" name="translator_ldappassword" value="" />
+   <tr><td>
+<input type="hidden" name="returnUrl" value=""/>
+<input type="hidden" name="serviceName" value="PS Parent Portal"/>
+<input type="hidden" name="serviceTicket" value=""/>
+<input type="hidden" name="pcasServerUrl" value="/"/>
+<input type="hidden" name="credentialType" value="User Id and Password Credential"/>
+</td></tr>
+  <input type=hidden name=ldappassword value=''>
+
+      
+ 
+    
+    
+			  <h2>Sign In</h2>
+      <!--box content-->
+    
+	<div id="noscript" class="feedback-alert"> To sign in to PowerSchool, you must use a browser that supports and has JavaScript enabled. </div>
+    <fieldset id="login-inputs" class="hide">
+	    	<div>
+		<label for="request_locale">Select Language</label>
+<select name="request_locale" onchange="setPageLocale(this.options[this.selectedIndex].value)">
+<option value="en_US" selected="selected">English</option>
+<option value="zh_CN">Chinese</option>
+<option value="fr_FR">French</option>
+<option value="ja_JP">Japanese</option>
+<option value="ko_KR">Korean</option>
+<option value="es_ES">Spanish</option>
+</select>
+	</div>
+
+        <div>
+			  <label>Username</label>
+			  <input type="text" id="fieldAccount" name="account" value="" size="39"  />
+        </div>
+        <div>
+			  <label>Password</label>
+			  <input type="password" name="pw" value="" size="39"  /><div id="login-help"><a href="/public/account_recovery_begin.html">Having trouble signing in?</a></div>
+        </div>
+        <div id="translatorInput">
+			  <label>Translator Sign In</label>
+			  <input type="password" name="translatorpw" value="" size="39"  />
+        </div>
+		<div class="button-row">
+		<button type="submit" id="btn-enter" title="Sign In To PowerSchool Parent Access" value="Enter" border="0" >Sign In</button>
+		</div>
+	</fieldset> 
+		  
+      <!-- box content-->
+		 
+
+</form>
+	
+  <!-- 	<hr />
+	<h2>Create an Account</h2>
+	<form action="/public/create_multi_student_account.html">
+
+		<p>
+		Create a parent account that allows you to view all of your students with one account. You can also manage your account preferences. <a href="/public/createaccounthelp.html">Learn more.</a>
+		</p>
+		<div class="button-row">
+		   <button type="submit" title='Create Account'>Create Account</button>
+		</div>
+
+	</form>
+
+ -->
+ </div>
+ <div id="footer" class="group">
+    <p>Copyright&copy; 2005 - 2013 Pearson Education, Inc., or its affiliate(s). All rights reserved.</p>
+    <p id="pearsoncorplink"><a href="http://www.facebook.com/powerschool" class="popWin fb" title="Join us on Facebook">Join us on Facebook</a></p>
+</div>
+
+</div>
+<div id="branding-pearson">
+    <div id="logo-pearson"></div>
+	<div id="tagline-pearson"></div>
+</div>
+<script type="text/javascript">
+	/**
+	 * Set the page's locale via a request_locale URL parameter. If there is already a URL parameter by
+	 * this name, then substitute it with the passed-in locale. NOTE: This function will actually cause the page
+	 * to be re-submitted with the new locale, so it really should not be used with pages submitted via POST
+	 * requests (if there are any, which I hope there are not).
+	 * @param locale the locale to set (e.g. en_US)
+	 */
+	function setPageLocale (locale) {
+	  var c=String (window.location);
+	  var rlpos = c.indexOf("request_locale=");
+	  var afterPart = "";
+	  if (rlpos > 0) {
+	    var afterBegin = c.indexOf("&", rlpos);
+	    if (afterBegin > 0) {
+	      afterPart = c.substring(afterBegin);
+	    }
+	    c = c.substring(0, rlpos-1);
+	  }
+	  var s=(c.indexOf('?') > 0 ? '&' : '?');
+	  var np = c + s + 'request_locale=' + locale + afterPart;
+	  window.location = np;
+	}
+
+	function jsCheck() {
+			document.getElementById("login-inputs").className = 'group';
+			
+	}
+ jsCheck();
+</script>
+
+<script>
+$j('#noscript').hide();
+function jsEnabled() {
+	if(typeof $j != 'function'){
+		alert('Developer: This page is missing key components required for functionality!\n\nPossible causes include:\n - Commonscripts might be missing.\n - Page customization might enabled, and incomplete.');
+		//document.write('<script...');
+		} else {
+		$j('#login-inputs').removeClass('hide');
+	    $j("#fieldAccount").focus();
+	}
+}
+$j(document).ready(function(){
+	jsEnabled();
+});
+
+</script>
+</body>
+</html>
