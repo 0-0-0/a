@@ -17,6 +17,7 @@ h1, h2, h3 {
 	margin: 0;
 	padding: 0;
 	color: white; 
+	text-align: center;
 }
 
 p, ol, ul {
